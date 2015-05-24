@@ -1,15 +1,16 @@
 <nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#foo">
         <span class="glyphicon glyphicon-home"></span> Questionaire
       </a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Ask</a></li>
-      </ul>
-    </div>
+	<div>
+		<ul class="nav navbar-nav">
+			<li ng-class="{ active: isActive('/')}"><a href="#foo">Frag!</a></li>
+			<li ng-class="{ active: isActive('/questions')}"><a href="#questions">Frageliste</a></li>
+		</ul>
+	</div>
   </div>
 </nav>
