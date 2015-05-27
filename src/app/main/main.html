@@ -3,27 +3,26 @@
   <div ng-include="'app/components/navbar/navbar.html'"></div>
   <div ng-include="'app/components/header/header.html'"></div>
 
+  <h2>Ich möchte...</h2>
+
   <div class="row">
-    <div class="col-sm-6 col-md-6">
-      <form id="askme">
-        <div class="form-group">
-          <label for="mail">E-Mail (optional)</label>
-          <input type="email" class="form-control" ng-model="ask.mail" id="mail" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="question">Frage</label>
-          <textarea class="form-control" id="question" ng-model="ask.question" placeholder="Stell deine Frage... "></textarea>
-        </div>
+      <div class="col-sm-6 col-md-6">
+        <form id="askme">
+          <p>Wenn Du informiert werden möchtest...</p>
+          <div class="form-group">
+            <label for="mail">E-Mail</label>
+            <input type="email" class="form-control" ng-model="mail.address" id="mail" placeholder="Deine Adresse">
+          </div>
+          
+          <div class="alert alert-success" ng-show="success">
+            <strong>Erfolgreich eingetragen</strong>
+            <br />Sobald es Neuigkeiten gibt, erfährst Du davon.
+          </div>
 
-        <div class="alert alert-success" ng-show="success">
-          <strong>Danke für deine Frage!</strong>
-          <br />Ich werde sie so schnell wie möglich beantworten, schau doch einfach in den nächsten Tagen noch mal vorbei!
-        </div>
-
-        <button type="submit" class="btn btn-success" ng-disabled="ask.question.length == 0" ng-click="send()">Submit</button>
-      </form>
+          <button type="submit" class="btn btn-success" ng-disabled="mail.address.length == 0" ng-click="send()">Eintragen</button>
+        </form>
+      </div>
     </div>
-  </div>
 
   <hr>
 

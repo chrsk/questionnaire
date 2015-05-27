@@ -1,26 +1,22 @@
 'use strict';
 
 angular.module('questionnaire')
-  .controller('MainCtrl', function ($scope, $firebaseArray) {
+  .controller('MainCtrl', function ($scope, $firebaseArray) { 
+      $scope.mail = {
+        address : ""
+      };
 
-    $scope.ask = {
-      mail : "",
-      question: ""
-    };
+      var ref = new Firebase("https://glowing-fire-9806.firebaseio.com/mails");
+      $scope.mails = $firebaseArray(ref);
 
-    var ref = new Firebase("https://glowing-fire-9806.firebaseio.com/questions");
-    $scope.questions = $firebaseArray(ref);
+      $scope.send = function() {
+          
+          $scope.mails.$add({
+            "address": $scope.mail.address
+          });
 
-    $scope.send = function() {
-        $scope.success = true;
-        $scope.questions.$add({
-          "question": $scope.ask.question,
-          "answer": "",
-          "date" : new Date(),
-          "enabled": false
-        });
-		
-		$scope.ask.mail = "";
-		$scope.ask.question = "";
-    }
+          $scope.success = true;
+          $scope.mail.address = "";
+
+      } 
   });

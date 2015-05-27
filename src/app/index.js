@@ -7,9 +7,12 @@ angular.module('questionnaire', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitiz
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })
-      .when('/questions', {
-        templateUrl: 'app/questions/questions.html',
-        controller: 'QuestionsCtrl'
+      .when('/question', {
+        templateUrl: 'app/question/question.html',
+        controller: 'QuestionCtrl'
+      }) .when('/answer', {
+        templateUrl: 'app/answer/answer.html',
+        controller: 'AnswerCtrl'
       })
       .otherwise({
         redirectTo: '/'

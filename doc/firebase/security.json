@@ -1,0 +1,58 @@
+{
+  "rules": {
+    
+    "mails": {
+      // false?
+      ".read": true,
+      ".write": false,
+      
+      "$m_id": {
+        ".write": "!data.exists()",
+        
+        "address": {
+          // data must be under 50 characters
+          ".validate": "newData.isString() && newData.val().length < 50"
+        },
+        
+        "$other": {
+          ".validate": false
+        }
+        
+      }  
+    },
+    
+    "questions": {
+      ".read": true,
+      ".write": false,
+      
+        "$q_id": {
+          ".write": "!data.exists()",
+          
+          "question": {
+          // data must be under 200 characters
+          ".validate": "newData.isString() && newData.val().length < 200"
+          },
+          "answer": {
+            // must be empty
+            ".validate": "newData.isString() && newData.val().length == 0"
+          },
+          "answerNum": {
+          // data must be 0 characters
+          ".validate": "newData.isString() && newData.val().length == 0"
+          },
+          "category": {
+          // data must be 0 characters
+          ".validate": "newData.isString() && newData.val().length == 0"
+          },
+          "enabled": {
+            // must be false
+            ".validate": "newData.val() == false"
+          },       
+          "$other": {
+          ".validate": false
+          }
+          
+        }
+    }
+  }
+}

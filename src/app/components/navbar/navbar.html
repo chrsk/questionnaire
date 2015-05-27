@@ -8,8 +8,9 @@
 
 	<div>
 		<ul class="nav navbar-nav">
-			<li ng-class="{ active: isActive('/')}"><a href="#foo">Frag!</a></li>
-			<li ng-class="{ active: isActive('/questions')}"><a href="#questions">Frageliste</a></li>
+			<li ng-class="{ active: isActive('/')}"><a href="#foo">idee{{addPostfix('/')}}</a></li>
+			<li ng-class="{ active: isActive('/question')}"><a href="#question">frage{{addPostfix('/question')}}</a></li>
+			<li ng-class="{ active: isActive('/answer')}"><a href="#answer">antwort{{addPostfix('/answer')}}</a></li>
 		</ul>
 	</div>
   </div>

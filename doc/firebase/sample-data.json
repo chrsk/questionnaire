@@ -1,0 +1,37 @@
+{
+  "mails" : [ null, {
+    "address" : "foo@foo.com"
+  } ],
+  "questions" : {
+    "1" : {
+      "answer" : "Ad eget mauris neque ultricies non condimentum fusce ridiculus suspendisse ut ullamcorper ligula netus at. Urna consectetur vestibulum nascetur malesuada nulla libero suspendisse consectetur aliquet nostra risus a vulputate suspendisse. A scelerisque est fringilla elit potenti ante parturient sagittis elit sociosqu hac adipiscing proin ac mattis nascetur cursus iaculis nullam aliquet. Commodo habitasse suspendisse non a integer lobortis cum a a parturient adipiscing scelerisque praesent urna ligula facilisi.",
+      "enabled" : true,
+      "question" : "Lorem Ipsum, dolor set item?"
+    },
+    "-JpmUKm50o3VRDFYUOuz" : {
+      "answer" : "Wohl im Norden.",
+      "enabled" : true,
+      "question" : "Wo ist Norden?"
+    },
+    "-JqGTv6XTcLZWHKWdrrc" : {
+      "answer" : "",
+      "category" : "",
+      "enabled" : false,
+      "question" : "ööä"
+    },
+    "-JqKX3MsrFA8UDm9ta9_" : {
+      "answer" : "",
+      "answerNum" : "2",
+      "category" : "",
+      "enabled" : true,
+      "question" : "Ööö"
+    },
+    "-JqKX4br5lmfVApwoLNu" : {
+      "answer" : "",
+      "answerNum" : "3",
+      "category" : "",
+      "enabled" : true,
+      "question" : "Äää"
+    }
+  }
+}
