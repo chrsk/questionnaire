@@ -1,17 +1,16 @@
-<nav class="navbar navbar-static-top navbar-inverse" ng-controller="NavbarCtrl">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#foo">
-        <span class="glyphicon glyphicon-home"></span> Questionaire
-      </a>
-    </div>
+<style type="text/css" src="header.css"></style>
+<div class="text-center">
+	<img class="header" src="http://www.placehold.it/350x150">
+	<nav class="" ng-controller="NavbarCtrl">
+	  <div class="container-fluid">
+		<div>
+			<ul class="nav navbar-nav">
+				<li ng-class="{ active: isActive('/')}"><a href="#foo">idee{{addPostfix('/')}}</a></li>
+				<li ng-class="{ active: isActive('/question')}"><a href="#question">frage{{addPostfix('/question')}}</a></li>
+				<li ng-class="{ active: isActive('/answer')}"><a href="#answer">antwort{{addPostfix('/answer')}}</a></li>
+			</ul>
+		</div>
+	  </div>
+	</nav>
+</div>
 
-	<div>
-		<ul class="nav navbar-nav">
-			<li ng-class="{ active: isActive('/')}"><a href="#foo">idee{{addPostfix('/')}}</a></li>
-			<li ng-class="{ active: isActive('/question')}"><a href="#question">frage{{addPostfix('/question')}}</a></li>
-			<li ng-class="{ active: isActive('/answer')}"><a href="#answer">antwort{{addPostfix('/answer')}}</a></li>
-		</ul>
-	</div>
-  </div>
-</nav>
