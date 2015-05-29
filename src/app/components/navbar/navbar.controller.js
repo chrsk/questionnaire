@@ -9,7 +9,7 @@ angular.module('questionnaire')
     	var postfix = '';
     	if (viewLocation === '/' && $scope.isActive(viewLocation)) {postfix = ':'};
     	if (viewLocation === '/question' && $scope.isActive(viewLocation)) {postfix = '?'};
-    	if (viewLocation === '/answer' && $scope.isActive(viewLocation)) {postfix = '!'};
+    	if (viewLocation === '/answer' && $scope.isActive(viewLocation)) {postfix = '.'};
         return postfix;
     };
   });
