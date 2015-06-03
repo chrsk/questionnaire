@@ -6,7 +6,7 @@ angular.module('questionnaire')
         return viewLocation === $location.path();
     };
     $scope.addPostfix = function (viewLocation) { 
-    	var postfix = '';
+    	var postfix = ' ';
     	if (viewLocation === '/' && $scope.isActive(viewLocation)) {postfix = ':'};
     	if (viewLocation === '/question' && $scope.isActive(viewLocation)) {postfix = '?'};
     	if (viewLocation === '/answer' && $scope.isActive(viewLocation)) {postfix = '.'};

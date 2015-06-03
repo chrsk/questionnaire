@@ -2,13 +2,14 @@
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
 
-  <h2>Ich möchte....</h2>
+  <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</h2>
+
+  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
   <div class="row">
-      <div class="col-sm-6 col-md-6">
-        <form name="news">
-          <p>Wenn Du informiert werden möchtest...</p>
-          <div class="form-group">
+      <div>
+        <form name="news" id="news">
+          <div class="form-group" id="news-form">
             <label for="mail">E-Mail</label>
             <input type="email" name="input" class="form-control" ng-model="mail.address" placeholder="Deine Adresse" required ng-change>
           </div>
@@ -17,12 +18,16 @@
             <strong>Erfolgreich eingetragen</strong>
             <br />Sobald es Neuigkeiten gibt, erfährst Du davon.
           </div>
-          <button type="submit" class="btn btn-success" ng-disabled="!news.input.$valid" ng-click="send()">Eintragen</button>
+          <button type="submit" class="btn" ng-disabled="!news.input.$valid" ng-click="send()">Eintragen</button>
         </form>
         
       </div>
     </div>
 
+  <p class="thanks">With ♥ from Chris</p>
+
   <hr>
 
 </div>
+
+<div class="push"></div>

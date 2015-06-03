@@ -4,21 +4,24 @@
 
   <div class="row">
     <div ng-show="anyAnswers" class="col-sm-12 col-md-12 animate-show" ng-repeat="question in questions | orderBy:'answerNum' | filter:{enabled:true}">
-      <div class="question">
-        <div class="caption">
-          <h3>{{question.question}}</h3>
+      <div>
+        <h3 class="question">{{question.question}}</h3>
+        <div class="answer caption">
           <p>{{question.answer}}</p>
         </div>
+        <img src="../../assets/images/eichenblatt.png" class="leaf">
       </div>
     </div>
-    <div ng-show="!anyAnswers && !loading" class="text-center animate-show">
-      <p>Hier werden in naher Zukunft die ersten Antworten auftauchen.</p>
+    <div ng-show="!anyAnswers && !loading" class="animate-show">
+      <h2>Hier werden in naher Zukunft die ersten Antworten auftauchen.</h2>
     </div>
-    <div ng-show="loading" class="text-center animate-show">
-      <p>Lädt...</p>
+    <div ng-show="loading" class="animate-show">
+      <h2>Lädt...</h2>
     </div>
   </div>
   
   <hr>
 
 </div>
+
+<div class="push"></div>

@@ -1,16 +1,23 @@
-<style type="text/css" src="header.css"></style>
-<div class="text-center">
-	<img class="header" src="http://www.placehold.it/350x150">
-	<nav class="" ng-controller="NavbarCtrl">
-	  <div class="container-fluid">
-		<div>
+<div>
+	<div class="moons">
+	    <div class="left-to-right"></div>
+	    <div class="right-to-left"></div>
+	</div>
+	<nav class="navbar navbar-default" role="navigation" ng-controller="NavbarCtrl">
+		<div class="navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
-				<li ng-class="{ active: isActive('/')}"><a href="#foo">idee{{addPostfix('/')}}</a></li>
-				<li ng-class="{ active: isActive('/question')}"><a href="#question">frage{{addPostfix('/question')}}</a></li>
-				<li ng-class="{ active: isActive('/answer')}"><a href="#answer">antwort{{addPostfix('/answer')}}</a></li>
+				<li ng-class="{ active: isActive('/')}">
+					<a href="#idee" id="idee">idee<div class="postfix" ng-class="{ visible: isActive('/')}">:</div></a>
+				</li>
+				<li ng-class="{ active: isActive('/question')}">
+					<a href="#question" id="question">frage<div class="postfix" ng-class="{ visible: isActive('/question')}">?</div></a>
+				</li>
+				<li ng-class="{ active: isActive('/answer')}">
+					<a href="#answer" id="answer">antwort<div class="postfix" ng-class="{ visible: isActive('/answer')}">.</div></a>
+				</li>
 			</ul>
 		</div>
-	  </div>
 	</nav>
+	<hr/>
 </div>
 

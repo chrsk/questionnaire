@@ -6,7 +6,6 @@
       <div>
         <form id="askme">
           <div class="form-group">
-            <label for="question">Frage</label>
             <textarea class="form-control" id="question" ng-model="ask.question" placeholder="Stell deine Frage... "></textarea>
           </div>
 
@@ -15,7 +14,10 @@
             <br />Ich werde sie so schnell wie möglich beantworten, schau doch einfach in den nächsten Tagen noch mal vorbei!
           </div>
 
-          <button type="submit" class="btn btn-success" ng-disabled="ask.question.length == 0" ng-click="send()">Submit</button>
+          <button type="submit" class="btn" ng-disabled="ask.question.length == 0 || ask.question.length > 250" ng-click="send()">Abschicken</button>
+          <div id="char-count" ng-show="ask.question.length > 250">
+            Die Frage hat mehr als 250 Zeichen, bitte kürzen.
+          </div>
         </form>
       </div>
     </div>
@@ -23,3 +25,5 @@
     <hr>
 
 </div>
+
+<div class="push"></div>

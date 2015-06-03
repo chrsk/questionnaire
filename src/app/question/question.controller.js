@@ -8,20 +8,25 @@ angular.module('questionnaire')
       question: ""
     };
 
-    var ref = new Firebase("https://glowing-fire-9806.firebaseio.com/questions");
-    $scope.questions = $firebaseArray(ref);
-
     $scope.send = function() {
-        $scope.success = true;
+        var ref = new Firebase("https://glowing-fire-9806.firebaseio.com/questions");
+        $scope.questions = $firebaseArray(ref);
+        
         $scope.questions.$add({
           "question": $scope.ask.question,
           "answer": "",
           "answerNum": "",
           "category": "",
           "enabled": false
+        }).then(function(ref) {
+          var id = ref.key();
+          console.log("added record with id " + id);
+          $scope.success = true;
+          $scope.questions.$destroy();
         });
 		
-		$scope.ask.mail = "";
-		$scope.ask.question = "";
+    		$scope.ask.mail = "";
+    		$scope.ask.question = "";
+
     }
   });
