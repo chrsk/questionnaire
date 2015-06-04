@@ -245,6 +245,43 @@ button {
 	background-color: #0D640E; 
 }
 
+.question {
+	cursor: pointer;
+}
+
+.answer.ng-hide-add {
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+
+	overflow:hidden;
+	max-height: 1000px;
+	opcity:1;
+}
+.answer.ng-hide-add.ng-hide-add-active {
+	max-height: 0;
+	opacity:0;
+}
+
+.answer.ng-hide-remove {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+
+	opacity:0;
+	overflow:hidden;
+	max-height:0px;
+}
+.answer.ng-hide-remove.ng-hide-remove-active {
+	max-height: 1000px;
+	opacity:1;
+}
+
+
 @font-face{ 
 	font-family: 'alegreya';
     src: url('../assets/fonts/alegreya-regular-webfont.eot');

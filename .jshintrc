@@ -21,6 +21,8 @@
   "globals": {
     "angular": false,
     // Angular Mocks
+    "console": false,
+    "Firebase": false,
     "inject": false,
     "module": false,
     // JASMINE
