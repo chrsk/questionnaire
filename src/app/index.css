@@ -1,3 +1,7 @@
+html {
+	overflow: scroll;
+}
+
 html, body {
 	min-height: 100%;
 	height: 100%;
@@ -8,7 +12,7 @@ html, body {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -200px;
+	margin: 0 auto -259px;
 	padding: 10px;
 }
 
@@ -19,20 +23,23 @@ html, body {
 
 }
 
-.footer {
-	margin: 0px auto;
-    height: 200px;
-    width: 350px;
-}
-
-.push {
-    min-height: 200px;
-}
-
 img.leaf {
 	display: block;
-	padding: 10px 0px 10px 0px;
 	margin:  0px auto;
+}
+
+a {
+	color: #9DB600;
+}
+
+a:hover {
+	color: #9DB600;
+	text-decoration: none;
+}
+
+a:focus {
+	color: #9DB600;
+	text-decoration: none;
 }
 
 /**/
@@ -41,23 +48,27 @@ div.right-to-left {
 	height: 150px;
 	width: 114px;
 	background-image: url(../assets/images/mondin.png);
+	background-size: 114px 150px;
 	right: -58px;
     position: relative;
     display: inline-block;
 	-webkit-transition: 1s ease;
 	transition: all 1s ease;
+	opacity: .9;
     
 }
 
 div.left-to-right {
 	height: 150px;
-	width: 148px;
+	width: 152px;
 	background-image: url(../assets/images/mond.png);
+	background-size: 152px 150px;
 	-webkit-transition: 1s ease;
 	transition: all 1s ease;
 	left: 0px;    
     position: relative;
     display: inline-block;
+    opacity: .9;
 }
 
 .moons:active div.right-to-left {
@@ -79,16 +90,20 @@ div.left-to-right {
     margin: 40px auto;
 }
 
+.moons:hover {
+    cursor: pointer;
+}
+
 /**/
 
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
     vertical-align: top;
+    margin-left: 20px;
 }
 
 .navbar .navbar-collapse {
-    text-align: center;
     border: none;
 }
 
@@ -99,7 +114,7 @@ div.left-to-right {
 
 .active > a {
 	background-color: transparent !important;
-	color: #0D640E !important;
+	color: #9DB600 !important;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -128,42 +143,105 @@ a:hover .postfix {
 	opacity: 1;
 }
 
+a#question {
+	margin-right: -15px;
+}
+
 .visible {
     opacity: 1;
 }
 
+.right {
+	float: right;
+}
+
 p {
 	text-align: justify;
-	font-size: 16px;
+	font-size: 18px;
+	padding: 10px 0px 5px;
 }
 
 h2, h3 {
 	text-align: center;
-	color: #0D640E;
+	color: #9DB600;
+}
+
+h3 small {
+	font-size: 50%;
+	color: #999;
 }
 
 .thanks {
 	text-align: center;
-	font-size: 0.8em;
-	color: #CCC;
-	padding-top: 20px;
+	font-size: 0.95em;
+	color: #BBB;
 }
 
 button {
-	background-color: #0D640E;
+	background-color: #9DB600;
   	color: white;
 }
 
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	opacity: 0.4;
+}
+
+.form-control:focus {
+	border-color: #9DB600;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.footer {
+	margin: 0px auto;
+    height: 259px;
+    width: 320px;
+}
+
+.footer:hover {
+	cursor: pointer;
+}
+
+.push {
+    min-height: 259px;
+    pointer-events: none;
+    background: none;
+}
+
+#orderAnswer {
+	max-width: 450px;
+  	margin: 0 auto;
+  	padding-top: 10px;
+}
+
+#orderAnswer .form-group {
+  	text-align: center;
+}
+
+#search {
+	margin-left: 15px;
+}
+
 #mensch{
-	  height: 200px;
-	  width: 350px;
-	  background-image: url(http://www.placehold.it/350x200/ffffff/000000);
+	height: 259px;
+	width: 320px;
+	background-image: url(../assets/images/mensch.png);
+	background-size: 320px 259px;
 }
 
 #baum{
-	  height: 200px;
-	  width: 350px;
-	  background-image: url(http://www.placehold.it/350x200/ffffff/0D640E);
+	height: 259px;
+	width: 320px;
+	background-image: url(../assets/images/baum.png);
+	background-size: 320px 259px;
 }
 
 .away {
@@ -173,18 +251,18 @@ button {
     -o-transition:All 1s ease;
 }
 
-.away:active {
+.footer:active .away{
     opacity: 0;
 }
 
 .up {
-    transition:All 1s ease;
-    -webkit-transition:All 1s ease;
-    -moz-transition:All 1s ease;
-    -o-transition:All 1s ease;
+    transition:All 1.5s ease;
+    -webkit-transition:All 1.5s ease;
+    -moz-transition:All 1.5s ease;
+    -o-transition:All 1.5s ease;
 }
 
-.up:active {
+.footer:active .up{
     opacity: 1;
 }
 
@@ -200,25 +278,28 @@ button {
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
+.photos {
+  text-align: center;
+  padding: 5px 0px 10px;
 }
 
-.thumbnail img.pull-right {
-  width: 50px;
+.photos img {
+  padding: 10px;
+  margin: 10px;
+  border: #EFEFEF 1px solid;
 }
 
 #news {
 	text-align: center;
 	margin: 0px auto;
-	padding: 20px;
+	padding: 0px 20px 0px 20px;
 	max-width: 350px;
 }
 
 #news-form {
 	text-align: center;
 	margin: 0px auto;
-	padding: 20px;
+	padding: 10px;
 
 }
 
@@ -226,7 +307,12 @@ button {
 	text-align: center;
 	margin: 0px auto;
 	padding: 20px;
+	padding-bottom: 50px;
 	max-width: 500px;
+}
+
+#askme textarea.form-control {
+	height: 80px;
 }
 
 #askme button {
@@ -239,10 +325,13 @@ button {
 }
 
 ::-moz-selection { 
-	background-color: #0D640E;
+	background-color: #9DB600;
+	color: #000;
+
 }
 ::selection { 
-	background-color: #0D640E; 
+	background-color: #9DB600; 
+	color: #000;
 }
 
 .question {
@@ -276,9 +365,34 @@ button {
 	overflow:hidden;
 	max-height:0px;
 }
+
 .answer.ng-hide-remove.ng-hide-remove-active {
 	max-height: 1000px;
 	opacity:1;
+}
+
+.animate-repeat {}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition:all 0.2s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
 }
 
 

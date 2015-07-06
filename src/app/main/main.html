@@ -2,16 +2,49 @@
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
 
-  <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</h2>
+  <h2>Ich möchte meine Erlebnisse, Erfahrungen, Ansichten und Gedanken – Lustiges sowie Ernstes – meiner bisherigen Lebensreise teilen und dabei vielleicht Bereiche meiner eigenen Geschichte neu entdecken.</h2>
 
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <p>Seit längerer Zeit habe ich den Wunsch verspürt, mehr über mich und meine Erlebnisse an andere weiterzugeben. Jedoch war ich mir bei der Art und Weise nicht ganz sicher. Durch einige Biografien inspiriert und durch viele spannende und interessante AMAs (ask me anything) auf reddit angeregt, habe ich in Form dieser Seite eine Plattform für einen direkten Austausch mit allen Interessierten geschaffen – persönliche Fragen und persönliche Antworten.</p>
+
+  
+
+  <p>Die Fragen geben mir die Möglichkeit einige interessante Geschichten, die aus meiner Lebenslage heraus entstanden sind, weiterzuerzählen und darüber hinaus Aspekte meines Lebens, über die ich selbst vielleicht noch nicht nachgedacht habe, zu erkunden. <br /><br />
+  Ich freue mich darauf. <a href="#antwort">Die ersten interessanten Fragen sind schon eingegangen.</a>
+  </p>
+
+  <div class="photos">
+    <img src="../assets/images/innerwille-3.jpg">
+    <img src="../assets/images/innerwille-5.jpg">
+  </div>
+
+  
+  <h3>
+    <a href="" ng-click="hiddenAbout = !hiddenAbout">
+      Du kennst meine Geschichte nicht?
+      <br />
+      <small>(Anklicken)</small>
+    </a>
+  </h3>
+  <div class="answer" ng-animate="answer" ng-show="hiddenAbout">
+    <p>Ich bin vor knapp 23 Jahren mit einer Krankheit namens „Spinale Muskelatrophie (Typ 2)“ im Ruhrgebiet zur Welt gekommen. Damals hieß es, ich würde nicht älter als 12 Jahre werden. Ohne dieser Prognose wirklich je viel Aufmerksamkeit zu schenken, habe ich mit der Begleitung eines Pflegedienstes meine schulische Laufbahn absolviert, zunächst auf einer Regel- später dann auf einer Körperbehindertenschule. Zu Beginn dieser Schulzeit, im Alter von acht Jahren, wurde mir nach akutem Notfall ein Tracheostoma gelegt. Seitdem ist eine künstliche Beatmung für mich lebensnotwendig geworden. Mit viel Unterstützung und glücklicher Fügung konnte ich eine Ausbildung zum Softwareentwickler mit Erfolg abschließen. Nachdem ich noch einige Monate in diesem Bereich gearbeitet habe, wurde mein Zustand jedoch stetig schlechter und ich musste die Arbeit vor zwei Jahren leider aufgeben.
+    </p>
+  </div>
+
+  <div class="photos">
+    <img src="../assets/images/innerwille-4.jpg">
+    <img src="../assets/images/innerwille-2.jpg">
+  </div>
+
+  <hr>
+  
+  <p>Wenn Du über Neuigkeiten, insbesondere also neue Antworten, informiert werden möchtest, kannst Du hier Deine Mailadresse hinterlegen. Dabei wirst Du allerdings nicht über den Status Deiner eigenen Fragen informiert, sondern lediglich über den Stand aller Antworten auf dem Laufenden gehalten. <em>Beachte, Deine Adresse kann nicht mit einer möglichen Frage von Dir in Verbindung gebracht werden.</em></p>
 
   <div class="row">
       <div>
         <form name="news" id="news">
           <div class="form-group" id="news-form">
-            <label for="mail">E-Mail</label>
-            <input type="email" name="input" class="form-control" ng-model="mail.address" placeholder="Deine Adresse" required ng-change>
+            <label for="mail">Neuigkeiten verfolgen</label>
+            <input type="email" name="input" class="form-control" ng-model="mail.address" placeholder="E-Mail-Adresse" required ng-change>
           </div>
           
           <div class="alert alert-success" ng-show="success">
@@ -23,8 +56,20 @@
         
       </div>
     </div>
-
-  <p class="thanks">With ♥ from Chris</p>
+  <hr>
+  <p class="thanks">
+    With ♥ from Chris
+    <br />
+    Grafik und Animation inspiriert durch Dornenreichs „Durch den Traum“.
+    <br /> 
+    Bei Anregungen, Problemen oder anderen Fragen bitte eine Mail an <a href="mailto:info@innerwille.de">info@innerwille.de</a>
+    <br />
+    <br />
+    Sommer 2015
+    <br />
+    <br />
+    <a href="#impressum">Impressum</a> | <a href="#datenschutz">Datenschutz</a>
+  </p>
 
   <hr>
 

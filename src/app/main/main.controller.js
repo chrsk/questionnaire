@@ -7,6 +7,8 @@ angular.module('questionnaire')
         address : ''
       };
 
+      $scope.hiddenAbout = false;
+
       $scope.send = function() {
           var ref = new Firebase('https://glowing-fire-9806.firebaseio.com/mails');
           $scope.mails = $firebaseArray(ref);

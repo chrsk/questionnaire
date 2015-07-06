@@ -1,26 +1,59 @@
 <div class="container">
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
-
-  <div class="row">
-    <div ng-show="anyAnswers" class="col-sm-12 col-md-12" ng-repeat="question in questions | orderBy:'answerNum' | filter:{enabled:true}">
-      <div>
-        <h3 class="question" ng-click="hiddenAnswer = !hiddenAnswer">{{question.question}}</h3>
-        <div class="answer" ng-animate="answer" ng-show="hiddenAnswer">
-          <p>{{question.answer}}</p>
+  <div>
+    <div ng-show="anyAnswers">
+      <p>Zur besseren Übersicht können die Antworten per Klick auf die jeweilige Frage ein- und ausgeblendet werden.</p>
+      <hr>
+      <p class="thanks"><strong>{{questions.length - 2}} Antworten, zuletzt aktualisiert am {{lastAnswer.$value}}</strong></p>
+      <form id="orderAnswer" role="search" class="form-inline">
+        <div class="form-group">
+          <div class="radio-inline">
+            <label>
+              <input type="radio" ng-model="orderNewestFirst" value="true" ng-click="order()"> Neueste zuerst
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" ng-model="orderNewestFirst" value="false" ng-click="order()"> Älteste zuerst
+            </label>
+          </div>  
+          <div id="search" class="input-group">
+            <div class="input-group-addon input-sm">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </div>
+            <input type="search" ng-model="q" class="form-control input-sm" placeholder="Fragen durchsuchen..." />
+          </div> 
         </div>
-        <img src="../assets/images/eichenblatt.png" class="leaf">
-      </div>
+      </form>  
     </div>
+
     <div ng-show="!anyAnswers && !loading">
-      <h2>Hier werden in naher Zukunft die ersten Antworten auftauchen.</h2>
+      <h2>Hier werden bald die ersten Antworten auftauchen.</h2>
     </div>
     <div ng-show="loading">
       <h2>Lädt...</h2>
     </div>
+    <div ng-show="anyAnswers" class="animate-repeat" ng-if="results.length == 0">
+      <h2>Nichts gefunden...</h2>
+    </div>
+
+    
+    <div>
+      <div class="animate-repeat" ng-show="anyAnswers" ng-repeat="question in questions | orderBy:'answerNum':reverse | filter: q as results">
+        <div>
+          <h3 class="question" ng-click="hiddenAnswer = !hiddenAnswer" ng-bind-html="question.question"></h3>
+          <div class="answer" ng-animate="answer" ng-show="hiddenAnswer">
+            <p ng-bind-html="question.answer"></p>
+          </div>
+          <img width="37" height="21" src="../assets/images/eichenblatt.png" class="leaf">
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p ng-show="anyAnswers" class="thanks">Mein Dank an C. und P. für ihre große Unterstützung beim Erfassen der Antworten.</p>
+
   </div>
-  
-  <hr>
 
 </div>
 

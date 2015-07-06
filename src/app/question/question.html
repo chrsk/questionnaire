@@ -2,25 +2,32 @@
 
   <div ng-include="'app/components/navbar/navbar.html'"></div>
 
-  <div class="row">
-      <div>
-        <form id="askme">
-          <div class="form-group">
-            <textarea class="form-control" id="question" ng-model="ask.question" placeholder="Stell deine Frage... "></textarea>
-          </div>
+    <div>
+      <p>Wer möchte, kann mir hier anonym Fragen stellen, <em>ganz gleich welcher Art.</em> Sobald ich auf eine dieser Fragen geantwortet habe, wird sie auf der <a href="#antwort">Antwortseite</a> für jeden sichtbar erscheinen. <br />
+      </p>
+      <form id="askme">
+        <div class="form-group">
+          <textarea class="form-control" id="question" ng-model="ask.question" placeholder="Deine Frage (max. 300 Zeichen)"></textarea>
+        </div>
 
-          <div class="alert alert-success" ng-show="success">
-            <strong>Danke für deine Frage!</strong>
-            <br />Ich werde sie so schnell wie möglich beantworten, schau doch einfach in den nächsten Tagen noch mal vorbei!
-          </div>
+        <div class="alert alert-success" ng-show="success">
+          <strong>Vielen Dank für deine Frage:</strong>
+          <br />
+          <br />
+          <em>{{sentQ}}</em>
+          <br />
+          <br />
+          Ich werde sie so schnell wie möglich beantworten. Schau doch in den nächsten Tagen noch mal vorbei.
+        </div>
 
-          <button type="submit" class="btn" ng-disabled="ask.question.length == 0 || ask.question.length > 250" ng-click="send()">Abschicken</button>
-          <div id="char-count" ng-show="ask.question.length > 250">
-            Die Frage hat mehr als 250 Zeichen, bitte kürzen.
-          </div>
-        </form>
-      </div>
+        <button type="submit" class="btn" ng-disabled="ask.question.length == 0 || ask.question.length > 300" ng-click="send()">Abschicken</button>
+        <div id="char-count" ng-show="ask.question.length > 300">
+          Die Frage hat mehr als 300 Zeichen, bitte kürzen.
+        </div>
+      </form>
+      <p>Bitte sende Deine Fragen einzeln ab, falls Du mehrere stellen möchtest.</p>
     </div>
+    
 
     <hr>
 

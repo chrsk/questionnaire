@@ -1,5 +1,5 @@
 <div>
-	<div class="moons">
+	<div class="moons disable-select" unselectable="yes" onselectstart="return false">
 	    <div class="left-to-right"></div>
 	    <div class="right-to-left"></div>
 	</div>
@@ -9,11 +9,11 @@
 				<li ng-class="{ active: isActive('/')}">
 					<a href="#idee" id="idee">idee<div class="postfix" ng-class="{ visible: isActive('/')}">:</div></a>
 				</li>
-				<li ng-class="{ active: isActive('/question')}">
-					<a href="#question" id="question">frage<div class="postfix" ng-class="{ visible: isActive('/question')}">?</div></a>
+				<li ng-class="{ active: isActive('/frage')}">
+					<a href="#frage" id="question">frage<div class="postfix" ng-class="{ visible: isActive('/frage')}">?</div></a>
 				</li>
-				<li ng-class="{ active: isActive('/answer')}">
-					<a href="#answer" id="answer">antwort<div class="postfix" ng-class="{ visible: isActive('/answer')}">.</div></a>
+				<li ng-class="{ active: isActive('/antwort')}">
+					<a href="#antwort" id="answer">antwort<div class="postfix" ng-class="{ visible: isActive('/antwort')}">.</div></a>
 				</li>
 			</ul>
 		</div>

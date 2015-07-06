@@ -3,8 +3,8 @@
 angular.module('questionnaire')
   .controller('QuestionCtrl', function ($scope, $firebaseArray) {
 
+    $scope.sentQ = '';
     $scope.ask = {
-      mail : '',
       question: ''
     };
 
@@ -13,19 +13,15 @@ angular.module('questionnaire')
         $scope.questions = $firebaseArray(ref);
         
         $scope.questions.$add({
-          'question': $scope.ask.question,
-          'answer': '',
-          'answerNum': '',
-          'category': '',
-          'enabled': false
+          'question': $scope.ask.question
         }).then(function(ref) {
-          var id = ref.key();
-          console.log('added record with id ' + id);
           $scope.success = true;
           $scope.questions.$destroy();
         });
-		
+
+		    $scope.sentQ = $scope.ask.question;
         $scope.ask.mail = '';
         $scope.ask.question = '';
+        
     };
   });
